@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('front/top');
 });
 
+Route::namespace('Api')->group(function () {
+    Route::get('/', 'QiitaApiController@getIndex');
+    
+});
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
